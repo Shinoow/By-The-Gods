@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.*;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -20,7 +21,7 @@ import com.shinoow.btg.common.CommonProxy;
 import com.shinoow.btg.common.entity.EntityNyarlathotepTNT;
 import com.shinoow.btg.common.rituals.*;
 
-@Mod(modid = ByTheGods.modid, name = ByTheGods.name, version = ByTheGods.version, dependencies = "required-after:Forge@[forgeversion,);required-after:abyssalcraft@[1.9.4,)", useMetadata = false, acceptedMinecraftVersions = "[1.10.2]", updateJSON = "https://raw.githubusercontent.com/Shinoow/By-The-Gods/master/version.json", certificateFingerprint = "cert_fingerprint")
+@Mod(modid = ByTheGods.modid, name = ByTheGods.name, version = ByTheGods.version, dependencies = "required-after:forge@[forgeversion,);required-after:abyssalcraft@[1.9.4,)", useMetadata = false, acceptedMinecraftVersions = "[1.11.2]", updateJSON = "https://raw.githubusercontent.com/Shinoow/By-The-Gods/master/version.json", certificateFingerprint = "cert_fingerprint")
 public class ByTheGods {
 
 	public static final String version = "btg_version";
@@ -49,7 +50,7 @@ public class ByTheGods {
 		cfg = new Configuration(event.getSuggestedConfigurationFile());
 		syncConfig();
 
-		EntityRegistry.registerModEntity(EntityNyarlathotepTNT.class, "nyarlathoteptnt", 1, instance, 80, 3, true);
+		EntityRegistry.registerModEntity(new ResourceLocation(modid, "nyarlathoteptnt"), EntityNyarlathotepTNT.class, "nyarlathoteptnt", 1, instance, 80, 3, true);
 
 		proxy.preInit();
 

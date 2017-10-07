@@ -45,7 +45,7 @@ public class ShubNiggurathInvocationRitual extends InvocationRitual {
 			EntityLiving sheep = getRandomSheep(world);
 			sheep.onInitialSpawn(world.getDifficultyForLocation(pos), null);
 			sheep.setLocationAndAngles(pos.getX() + posNeg(world.rand), pos.getY() + world.rand.nextInt(5), pos.getZ() + posNeg(world.rand), 0, 0);
-			world.spawnEntityInWorld(sheep);
+			world.spawnEntity(sheep);
 		}
 		PlayerKillUtil.killEntity(player, PlayerKillUtil.shub_niggurath);
 	}

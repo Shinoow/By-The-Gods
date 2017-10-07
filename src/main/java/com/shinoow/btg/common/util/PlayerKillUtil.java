@@ -63,14 +63,14 @@ public class PlayerKillUtil {
 
 		if(target instanceof EntityPlayer){
 			for(int i = 0; i < 9; i++)
-				if(((EntityPlayer) target).inventory.getStackInSlot(i) != null)
+				if(!((EntityPlayer) target).inventory.getStackInSlot(i).isEmpty())
 					stacks.add(((EntityPlayer) target).inventory.removeStackFromSlot(i));
-			if(((EntityPlayer) target).inventory.offHandInventory[0] != null)
-				stacks.add(((EntityPlayer) target).inventory.offHandInventory[0]);
+			if(!((EntityPlayer) target).inventory.offHandInventory.get(0).isEmpty())
+				stacks.add(((EntityPlayer) target).inventory.offHandInventory.get(0));
 			target.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, null);
 		} else {
 			for(ItemStack stack : target.getHeldEquipment())
-				if(stack != null)
+				if(!stack.isEmpty())
 					stacks.add(stack);
 
 			target.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, null);
@@ -78,14 +78,14 @@ public class PlayerKillUtil {
 		}
 
 		for(ItemStack stack : stacks)
-			target.worldObj.spawnEntityInWorld(new EntityItem(target.worldObj, target.posX + target.worldObj.rand.nextInt(5),
-					target.posY + target.worldObj.rand.nextInt(5), target.posZ + target.worldObj.rand.nextInt(5), stack));
+			target.world.spawnEntity(new EntityItem(target.world, target.posX + target.world.rand.nextInt(5),
+					target.posY + target.world.rand.nextInt(5), target.posZ + target.world.rand.nextInt(5), stack));
 	}
 
 	private static void clearArmor(Entity target){
 		List<ItemStack> stacks = Lists.newArrayList();
 		for(ItemStack stack : target.getArmorInventoryList())
-			if(stack != null)
+			if(!stack.isEmpty())
 				stacks.add(stack);
 		target.setItemStackToSlot(EntityEquipmentSlot.HEAD, null);
 		target.setItemStackToSlot(EntityEquipmentSlot.CHEST, null);
@@ -93,8 +93,8 @@ public class PlayerKillUtil {
 		target.setItemStackToSlot(EntityEquipmentSlot.FEET, null);
 
 		for(ItemStack stack : stacks)
-			target.worldObj.spawnEntityInWorld(new EntityItem(target.worldObj, target.posX + target.worldObj.rand.nextInt(5),
-					target.posY + target.worldObj.rand.nextInt(5), target.posZ + target.worldObj.rand.nextInt(5), stack));
+			target.world.spawnEntity(new EntityItem(target.world, target.posX + target.world.rand.nextInt(5),
+					target.posY + target.world.rand.nextInt(5), target.posZ + target.world.rand.nextInt(5), stack));
 	}
 
 	/**

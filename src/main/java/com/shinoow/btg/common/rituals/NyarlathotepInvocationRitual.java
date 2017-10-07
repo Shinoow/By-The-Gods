@@ -37,7 +37,7 @@ public class NyarlathotepInvocationRitual extends InvocationRitual {
 		SpecialTextUtil.customGroup(world, "Nyarlathotep", "Gnark gnark! Didn't see that coming now, did you "+player.getName()+"? Foolish human.");
 		for(int i = 0; i < n; i++){
 			EntityNyarlathotepTNT tnt = new EntityNyarlathotepTNT(world, pos.getX() + posNeg(world.rand), pos.getY() + world.rand.nextInt(5), pos.getZ() + posNeg(world.rand), null);
-			world.spawnEntityInWorld(tnt);
+			world.spawnEntity(tnt);
 		}
 	}
 }

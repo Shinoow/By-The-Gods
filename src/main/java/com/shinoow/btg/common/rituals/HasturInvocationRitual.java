@@ -24,7 +24,7 @@ public class HasturInvocationRitual extends InvocationRitual {
 
 	@Override
 	protected void completeRitualClient(World world, BlockPos pos, EntityPlayer player) {
-		player.addChatMessage(new TextComponentString("He whose name should not be said."));
+		player.sendMessage(new TextComponentString("He whose name should not be said."));
 	}
 
 	@Override

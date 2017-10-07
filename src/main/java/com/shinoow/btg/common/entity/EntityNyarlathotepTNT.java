@@ -2,6 +2,7 @@ package com.shinoow.btg.common.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.MoverType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.nbt.NBTTagCompound;
@@ -63,7 +64,7 @@ public class EntityNyarlathotepTNT extends Entity {
 		prevPosY = posY;
 		prevPosZ = posZ;
 		motionY -= 0.03999999910593033D;
-		moveEntity(motionX, motionY, motionZ);
+		move(MoverType.SELF,motionX, motionY, motionZ);
 		motionX *= 0.9800000190734863D;
 		motionY *= 0.9800000190734863D;
 		motionZ *= 0.9800000190734863D;
@@ -83,20 +84,20 @@ public class EntityNyarlathotepTNT extends Entity {
 
 		} else {
 			handleWaterMovement();
-			worldObj.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, posX, posY + 0.5D, posZ, 0.0D, 0.0D, 0.0D, new int[0]);
+			world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, posX, posY + 0.5D, posZ, 0.0D, 0.0D, 0.0D, new int[0]);
 		}
 	}
 
 	private void explode()
 	{
-		if(!worldObj.isRemote){
-			NyarlathotepExplosion explosion = new NyarlathotepExplosion(worldObj, this, posX, posY, posZ, 16, false, true);
-			if(net.minecraftforge.event.ForgeEventFactory.onExplosionStart(worldObj, explosion)) return;
+		if(!world.isRemote){
+			NyarlathotepExplosion explosion = new NyarlathotepExplosion(world, this, posX, posY, posZ, 16, false, true);
+			if(net.minecraftforge.event.ForgeEventFactory.onExplosionStart(world, explosion)) return;
 			explosion.doExplosionA();
 			explosion.doExplosionB(true);
 
-			if(worldObj instanceof WorldServer)
-				for (EntityPlayer entityplayer : ((WorldServer)worldObj).playerEntities)
+			if(world instanceof WorldServer)
+				for (EntityPlayer entityplayer : ((WorldServer)world).playerEntities)
 					if (entityplayer.getDistanceSq(posX, posY, posZ) < 4096.0D)
 						((EntityPlayerMP)entityplayer).connection.sendPacket(new SPacketExplosion(posX, posY, posZ , 16, explosion.getAffectedBlockPositions(), explosion.getPlayerKnockbackMap().get(entityplayer)));
 

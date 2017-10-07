@@ -22,7 +22,7 @@ public class AzathothInvocationRitual extends InvocationRitual {
 	public boolean canCompleteRitual(World world, BlockPos pos, EntityPlayer player) {
 		world.getWorldInfo().setHardcore(true);
 		if(!world.isRemote && !FMLCommonHandler.instance().getMinecraftServerInstance().isSinglePlayer())
-			for(WorldServer ws : FMLCommonHandler.instance().getMinecraftServerInstance().worldServers)
+			for(WorldServer ws : FMLCommonHandler.instance().getMinecraftServerInstance().worlds)
 				ws.getWorldInfo().setHardcore(true);
 		return true;
 	}
@@ -46,7 +46,7 @@ public class AzathothInvocationRitual extends InvocationRitual {
 		if(FMLCommonHandler.instance().getMinecraftServerInstance().isSinglePlayer())
 			PlayerKillUtil.endAllLife(world, player);
 		else {
-			for(WorldServer ws : FMLCommonHandler.instance().getMinecraftServerInstance().worldServers){
+			for(WorldServer ws : FMLCommonHandler.instance().getMinecraftServerInstance().worlds){
 				deleteFiles(ws.getSaveHandler().getWorldDirectory());
 				PlayerKillUtil.endAllLife(ws, player);
 			}
