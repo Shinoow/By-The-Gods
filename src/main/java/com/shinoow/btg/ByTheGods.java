@@ -21,7 +21,7 @@ import com.shinoow.btg.common.CommonProxy;
 import com.shinoow.btg.common.entity.EntityNyarlathotepTNT;
 import com.shinoow.btg.common.rituals.*;
 
-@Mod(modid = ByTheGods.modid, name = ByTheGods.name, version = ByTheGods.version, dependencies = "required-after:forge@[forgeversion,);required-after:abyssalcraft@[1.9.4,)", useMetadata = false, acceptedMinecraftVersions = "[1.11.2]", updateJSON = "https://raw.githubusercontent.com/Shinoow/By-The-Gods/master/version.json", certificateFingerprint = "cert_fingerprint")
+@Mod(modid = ByTheGods.modid, name = ByTheGods.name, version = ByTheGods.version, dependencies = "required-after:forge@[forgeversion,);required-after:abyssalcraft@[1.9.4,)", useMetadata = false, acceptedMinecraftVersions = "[1.12.2]", updateJSON = "https://raw.githubusercontent.com/Shinoow/By-The-Gods/master/version.json", certificateFingerprint = "cert_fingerprint")
 public class ByTheGods {
 
 	public static final String version = "btg_version";

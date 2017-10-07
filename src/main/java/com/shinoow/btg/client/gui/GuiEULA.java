@@ -41,7 +41,7 @@ public class GuiEULA extends GuiScreen {
 		int center = width / 2;
 		int y = height / 2;
 		super.drawScreen(mouseX, mouseY, partialTicks);
-		fontRendererObj.drawSplitString("Thank you for installing By The Gods!\nDue to the destructive things this mod can do to the world (and anything inside it), I (Shinoow) need you to accept the mod's EULA (a copy can be found in the mod's jar file, but also on the GitHub repository and the CurseForge page), which in short includes you accepting to take all responsibility for anything bad happening due to usage of this mod, while also revoking your right to blame me for anything (as it's your responsibility, not mine)\n\nIf you do not wish to comply to these terms, please quit the game and remove the mod.", center - 140, y - 90, 300, 0xFFFFFF);
+		fontRenderer.drawSplitString("Thank you for installing By The Gods!\nDue to the destructive things this mod can do to the world (and anything inside it), I (Shinoow) need you to accept the mod's EULA (a copy can be found in the mod's jar file, but also on the GitHub repository and the CurseForge page), which in short includes you accepting to take all responsibility for anything bad happening due to usage of this mod, while also revoking your right to blame me for anything (as it's your responsibility, not mine)\n\nIf you do not wish to comply to these terms, please quit the game and remove the mod.", center - 140, y - 90, 300, 0xFFFFFF);
 	}
 
 	@Override
