@@ -1,0 +1,25 @@
+{
+  	"modListVersion": 2,
+  	"modList": [
+  			{
+  				"modid": "btg",
+  				"name": "By The Gods",
+  				"description": "Maybe trying to summon a Great Old One isn't a very good idea...",
+  				"mcversion": "${mcversion}",
+  				"version": "${version}",
+  				"authorList": [
+  						"shinoow"
+  				],
+  				"credits": "",
+  				"dependants": [  ],
+				"dependencies": [  ],
+				"parent": "",
+				"requiredMods": [  ],
+				"logoFile": "assets/btg/textures/logo.png",
+				"screenshots": [  ],
+				"updateUrl": "https://minecraft.curseforge.com/projects/by-the-gods",
+  				"url": "https://minecraft.curseforge.com/projects/by-the-gods",
+ 				"useDependencyInformation": true
+			}
+	]
+}
