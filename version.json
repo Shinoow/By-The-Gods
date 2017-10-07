@@ -1,0 +1,20 @@
+{
+  "homepage": "https://minecraft.curseforge.com/projects/by-the-gods",
+  "promos": {
+    "1.12.2-latest": "1.0.0",
+    "1.12.2-recommended": "1.0.0",
+    "1.11.2-latest": "1.0.0",
+    "1.11.2-recommended": "1.0.0"
+    "1.10.2-latest": "1.0.0",
+    "1.10.2-recommended": "1.0.0"
+  },
+  "1.12": {
+	"1.0.0": "- Initial release"
+  },
+  "1.11.2": {
+	"1.0.0": "- Initial release"
+  }
+  "1.10.2": {
+	"1.0.0": "- Initial release"
+  }
+}
