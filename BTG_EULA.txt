@@ -1,0 +1,12 @@
+By The Gods End-User License Agreement (EULA)
+
+By installing this mod, you agree to the following:
+
+1. Anything affecting your world negatively due to usage of this mod falls under your responsibility.
+	1.1 If you are a player, you'll be the one to blame for anything bad happening through usage of this mod.
+	1.2 If you are the owner of a server (or anyone in charge of a server), you would hold partial blame with the player who initiated the bad thing (as you allowed the mod onto the server, while they did the deed).
+	1.3 If you are a modpack developer, you should either reset the config file prior to a pack update/release, or acknowledge that the mod is present with the EULA prematurely accepted.
+		Failing to do so gives the user and/or server owner the right to blame your for anything bad happening due to lack of warning.
+2. You revoke your right to hold me (Shinoow) accountable for anything negative (small or big) caused by usage of this mod. You accept full responsibility for any action in regards to this mod.
+
+If you do not wish to comply to these terms, please remove the mod immediately.
