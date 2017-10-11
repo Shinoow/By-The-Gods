@@ -33,6 +33,10 @@ public class PlayerKillUtil {
 	 * @param source Damage source
 	 */
 	public static void killEntity(Entity target, DamageSource source){
+		killEntity(target, source, false);
+	}
+
+	private static void killEntity(Entity target, DamageSource source, boolean tried){
 		if(target.attackEntityFrom(source, 1000000000)){
 			if(!target.isDead){
 				if(target instanceof EntityLivingBase)
@@ -53,8 +57,13 @@ public class PlayerKillUtil {
 				}
 			}
 		} else{
+			if(tried){ //in the event the entity refused to die the conventional way
+				target.setDead();
+				return;
+			}
+
 			clearArmor(target);
-			killEntity(target, source);
+			killEntity(target, source, true);
 		}
 	}
 
