@@ -1,20 +1,23 @@
 {
   "homepage": "https://minecraft.curseforge.com/projects/by-the-gods",
   "promos": {
-    "1.12.2-latest": "1.0.0",
-    "1.12.2-recommended": "1.0.0",
-    "1.11.2-latest": "1.0.0",
-    "1.11.2-recommended": "1.0.0"
-    "1.10.2-latest": "1.0.0",
-    "1.10.2-recommended": "1.0.0"
+    "1.12.2-latest": "1.0.1",
+    "1.12.2-recommended": "1.0.1",
+    "1.11.2-latest": "1.0.1",
+    "1.11.2-recommended": "1.0.1"
+    "1.10.2-latest": "1.0.1",
+    "1.10.2-recommended": "1.0.1"
   },
   "1.12": {
+	"1.0.1": "- Stability fixes for Azathoth's digestive tract (fewer worlds getting regurgitated in singleplayer)\n- Fixed inventory slot contents incorrectly being set to null instead of ItemStack.EMPTY",
 	"1.0.0": "- Initial release"
   },
   "1.11.2": {
+	"1.0.1": "- Stability fixes for Azathoth's digestive tract (fewer worlds getting regurgitated in singleplayer)\n- Fixed inventory slot contents incorrectly being set to null instead of ItemStack.EMPTY",
 	"1.0.0": "- Initial release"
   }
   "1.10.2": {
+	"1.0.1": "- Stability fixes for Azathoth's digestive tract (fewer worlds getting regurgitated in singleplayer)",
 	"1.0.0": "- Initial release"
   }
 }
