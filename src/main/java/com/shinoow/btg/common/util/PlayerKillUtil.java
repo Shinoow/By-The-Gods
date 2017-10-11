@@ -33,6 +33,10 @@ public class PlayerKillUtil {
 	 * @param source Damage source
 	 */
 	public static void killEntity(Entity target, DamageSource source){
+		killEntity(target, source, false);
+	}
+
+	private static void killEntity(Entity target, DamageSource source, boolean tried){
 		if(target.attackEntityFrom(source, 1000000000)){
 			if(!target.isDead){
 				if(target instanceof EntityLivingBase)
@@ -53,8 +57,13 @@ public class PlayerKillUtil {
 				}
 			}
 		} else{
+			if(tried){ //in the event the entity refused to die the conventional way
+				target.setDead();
+				return;
+			}
+
 			clearArmor(target);
-			killEntity(target, source);
+			killEntity(target, source, true);
 		}
 	}
 
@@ -67,14 +76,14 @@ public class PlayerKillUtil {
 					stacks.add(((EntityPlayer) target).inventory.removeStackFromSlot(i));
 			if(!((EntityPlayer) target).inventory.offHandInventory.get(0).isEmpty())
 				stacks.add(((EntityPlayer) target).inventory.offHandInventory.get(0));
-			target.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, null);
+			target.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, ItemStack.EMPTY);
 		} else {
 			for(ItemStack stack : target.getHeldEquipment())
 				if(!stack.isEmpty())
 					stacks.add(stack);
 
-			target.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, null);
-			target.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, null);
+			target.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, ItemStack.EMPTY);
+			target.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, ItemStack.EMPTY);
 		}
 
 		for(ItemStack stack : stacks)
@@ -87,10 +96,10 @@ public class PlayerKillUtil {
 		for(ItemStack stack : target.getArmorInventoryList())
 			if(!stack.isEmpty())
 				stacks.add(stack);
-		target.setItemStackToSlot(EntityEquipmentSlot.HEAD, null);
-		target.setItemStackToSlot(EntityEquipmentSlot.CHEST, null);
-		target.setItemStackToSlot(EntityEquipmentSlot.LEGS, null);
-		target.setItemStackToSlot(EntityEquipmentSlot.FEET, null);
+		target.setItemStackToSlot(EntityEquipmentSlot.HEAD, ItemStack.EMPTY);
+		target.setItemStackToSlot(EntityEquipmentSlot.CHEST, ItemStack.EMPTY);
+		target.setItemStackToSlot(EntityEquipmentSlot.LEGS, ItemStack.EMPTY);
+		target.setItemStackToSlot(EntityEquipmentSlot.FEET, ItemStack.EMPTY);
 
 		for(ItemStack stack : stacks)
 			target.world.spawnEntity(new EntityItem(target.world, target.posX + target.world.rand.nextInt(5),
