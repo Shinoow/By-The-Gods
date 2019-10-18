@@ -1,5 +1,9 @@
 package com.shinoow.btg.client.gui;
 
+import org.apache.logging.log4j.Level;
+
+import com.shinoow.btg.ByTheGods;
+
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
@@ -7,13 +11,8 @@ import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
-import org.apache.logging.log4j.Level;
-
-import com.shinoow.btg.ByTheGods;
 
 public class GuiEULA extends GuiScreen {
 
@@ -52,7 +51,7 @@ public class GuiEULA extends GuiScreen {
 			ByTheGods.cfg.save();
 			mc.displayGuiScreen(parent);
 		} else if(button.id == 1){
-			FMLLog.log("By The Gods", Level.WARN, "EULA declined, shutting down game! Either remove the mod or accept the EULA on next launch!");
+			ByTheGods.LOGGER.log(Level.WARN, "EULA declined, shutting down game! Either remove the mod or accept the EULA on next launch!");
 			FMLCommonHandler.instance().exitJava(1, true);
 		}
 	}

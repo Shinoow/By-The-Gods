@@ -3,6 +3,8 @@ package com.shinoow.btg.common.util;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.google.common.collect.Lists;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -10,11 +12,8 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-
-import com.google.common.collect.Lists;
 
 public class PlayerKillUtil {
 
@@ -40,8 +39,7 @@ public class PlayerKillUtil {
 		if(target.attackEntityFrom(source, 1000000000)){
 			if(!target.isDead){
 				if(target instanceof EntityLivingBase)
-					for(PotionEffect p :((EntityLivingBase)target).getActivePotionEffects())
-						((EntityLivingBase) target).removePotionEffect(p.getPotion());
+					((EntityLivingBase)target).clearActivePotions();
 				target.attackEntityFrom(source, 1000000000);
 				if(!target.isDead){
 					clearArmor(target);

@@ -2,6 +2,8 @@ package com.shinoow.btg.common.rituals;
 
 import java.io.File;
 
+import com.shinoow.btg.common.util.PlayerKillUtil;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -10,8 +12,6 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-
-import com.shinoow.btg.common.util.PlayerKillUtil;
 
 public class AzathothInvocationRitual extends InvocationRitual {
 

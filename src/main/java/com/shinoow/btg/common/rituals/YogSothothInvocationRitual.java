@@ -1,5 +1,7 @@
 package com.shinoow.btg.common.rituals;
 
+import com.shinoow.btg.common.util.PlayerKillUtil;
+
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -7,16 +9,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import com.shinoow.btg.common.util.PlayerKillUtil;
-
 public class YogSothothInvocationRitual extends InvocationRitual {
 
 	public YogSothothInvocationRitual() {
 		super("yogsothothInvocation", Items.CLOCK, null, new ItemStack[]{new ItemStack(Items.OAK_DOOR),
 				new ItemStack(Items.SPRUCE_DOOR), new ItemStack(Items.BIRCH_DOOR), new ItemStack(Items.JUNGLE_DOOR),
 				new ItemStack(Items.ACACIA_DOOR), new ItemStack(Items.DARK_OAK_DOOR)}, null, Items.CLOCK, null, new ItemStack[]{new ItemStack(Items.OAK_DOOR),
-				new ItemStack(Items.SPRUCE_DOOR), new ItemStack(Items.BIRCH_DOOR), new ItemStack(Items.JUNGLE_DOOR),
-				new ItemStack(Items.ACACIA_DOOR), new ItemStack(Items.DARK_OAK_DOOR)});
+						new ItemStack(Items.SPRUCE_DOOR), new ItemStack(Items.BIRCH_DOOR), new ItemStack(Items.JUNGLE_DOOR),
+						new ItemStack(Items.ACACIA_DOOR), new ItemStack(Items.DARK_OAK_DOOR)});
 	}
 
 	@Override

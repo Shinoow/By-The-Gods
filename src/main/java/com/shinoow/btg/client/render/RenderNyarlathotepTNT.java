@@ -1,5 +1,7 @@
 package com.shinoow.btg.client.render;
 
+import com.shinoow.btg.common.entity.EntityNyarlathotepTNT;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockRendererDispatcher;
 import net.minecraft.client.renderer.GlStateManager;
@@ -9,8 +11,6 @@ import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
-
-import com.shinoow.btg.common.entity.EntityNyarlathotepTNT;
 
 public class RenderNyarlathotepTNT extends Render<EntityNyarlathotepTNT> {
 

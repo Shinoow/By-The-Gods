@@ -1,11 +1,11 @@
 package com.shinoow.btg.common.rituals;
 
+import com.shinoow.btg.common.util.PlayerKillUtil;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import com.shinoow.btg.common.util.PlayerKillUtil;
 
 public class CthulhuInvocationRitual extends InvocationRitual {
 

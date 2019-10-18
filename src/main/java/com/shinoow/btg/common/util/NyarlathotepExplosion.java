@@ -2,6 +2,11 @@ package com.shinoow.btg.common.util;
 
 import java.util.*;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
+import com.shinoow.btg.common.entity.EntityNyarlathotepTNT;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentProtection;
@@ -16,11 +21,6 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.*;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Sets;
-import com.shinoow.btg.common.entity.EntityNyarlathotepTNT;
 
 public class NyarlathotepExplosion extends Explosion {
 

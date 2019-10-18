@@ -2,13 +2,13 @@ package com.shinoow.btg.common.rituals;
 
 import java.util.Random;
 
+import com.shinoow.abyssalcraft.lib.util.SpecialTextUtil;
+import com.shinoow.btg.common.entity.EntityNyarlathotepTNT;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import com.shinoow.abyssalcraft.lib.util.SpecialTextUtil;
-import com.shinoow.btg.common.entity.EntityNyarlathotepTNT;
 
 public class NyarlathotepInvocationRitual extends InvocationRitual {
 

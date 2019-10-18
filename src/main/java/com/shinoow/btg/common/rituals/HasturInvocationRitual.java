@@ -1,13 +1,13 @@
 package com.shinoow.btg.common.rituals;
 
+import com.shinoow.btg.common.util.PlayerKillUtil;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
-
-import com.shinoow.btg.common.util.PlayerKillUtil;
 
 public class HasturInvocationRitual extends InvocationRitual {
 

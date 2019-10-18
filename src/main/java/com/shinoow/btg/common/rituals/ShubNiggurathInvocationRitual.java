@@ -2,6 +2,10 @@ package com.shinoow.btg.common.rituals;
 
 import java.util.Random;
 
+import com.shinoow.abyssalcraft.common.entity.EntityShubOffspring;
+import com.shinoow.abyssalcraft.common.entity.demon.EntityEvilSheep;
+import com.shinoow.btg.common.util.PlayerKillUtil;
+
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,9 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
-
-import com.shinoow.abyssalcraft.common.entity.demon.EntityEvilSheep;
-import com.shinoow.btg.common.util.PlayerKillUtil;
 
 public class ShubNiggurathInvocationRitual extends InvocationRitual {
 
@@ -28,7 +29,7 @@ public class ShubNiggurathInvocationRitual extends InvocationRitual {
 	}
 
 	private EntityLiving getRandomSheep(World world){
-		return world.rand.nextBoolean() ? new EntitySheep(world) : new EntityEvilSheep(world);
+		return world.rand.nextInt(4) == 0 ? new EntityShubOffspring(world) : world.rand.nextBoolean() ? new EntitySheep(world) : new EntityEvilSheep(world);
 	}
 
 	private int posNeg(Random rand){

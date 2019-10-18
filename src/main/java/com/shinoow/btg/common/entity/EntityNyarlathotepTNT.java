@@ -1,5 +1,7 @@
 package com.shinoow.btg.common.entity;
 
+import com.shinoow.btg.common.util.NyarlathotepExplosion;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MoverType;
@@ -10,8 +12,6 @@ import net.minecraft.network.play.server.SPacketExplosion;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-
-import com.shinoow.btg.common.util.NyarlathotepExplosion;
 
 public class EntityNyarlathotepTNT extends Entity {
 

@@ -1,5 +1,7 @@
 package com.shinoow.btg.common.rituals;
 
+import com.shinoow.btg.common.util.PlayerKillUtil;
+
 import net.minecraft.block.BlockPrismarine;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,8 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
-
-import com.shinoow.btg.common.util.PlayerKillUtil;
 
 public class DagonInvocationRitual extends InvocationRitual {
 
