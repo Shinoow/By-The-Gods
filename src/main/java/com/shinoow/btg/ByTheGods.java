@@ -49,7 +49,7 @@ public class ByTheGods {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
 		metadata = event.getModMetadata();
-		metadata.description = metadata.description +"\n\n\u00a76Supporters: "+getSupporterList()+"\u00a7r";
+		getSupporterList();
 
 		cfg = new Configuration(event.getSuggestedConfigurationFile());
 		syncConfig();
@@ -95,20 +95,24 @@ public class ByTheGods {
 			cfg.save();
 	}
 
-	private String getSupporterList(){
-		BufferedReader nameFile;
-		String names = "";
-		try {
-			nameFile = new BufferedReader(new InputStreamReader(new URL("https://raw.githubusercontent.com/Shinoow/AbyssalCraft/master/supporters.txt").openStream()));
+	private void getSupporterList(){
+		new Thread("By The Gods Fetch Supporters") {
+			public void run() {
+				BufferedReader nameFile;
+				String names = "";
+				try {
+					nameFile = new BufferedReader(new InputStreamReader(new URL("https://raw.githubusercontent.com/Shinoow/AbyssalCraft/master/supporters.txt").openStream()));
 
-			names = nameFile.readLine();
-			nameFile.close();
+					names = nameFile.readLine();
+					nameFile.close();
 
-		} catch (IOException e) {
-			LOGGER.log(Level.ERROR, "Failed to fetch supporter list, using local version!");
-			names = "Tedyhere";
-		}
-
-		return names;
+				} catch (IOException e) {
+					LOGGER.log(Level.ERROR, "Failed to fetch supporter list, using local version!");
+					names = "Jenni Mort, Simon.R.K";
+				}
+				
+				metadata.description += String.format("\n\n\u00a76Supporters: %s\u00a7r", names);
+			}
+		}.start();
 	}
 }
